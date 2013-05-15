@@ -39,7 +39,7 @@ public class ExtEmailSlicer extends	UnorderedStringSlicer<AbstractProject<?, ?>>
 		public ExtEmailSliceSpec() {
 			super(",", "Editable Email Notification", "emailext");
 		}
-		
+
 		@Override
 		protected ProjectHandler getProjectHandler(AbstractProject project) {
 			return this;
@@ -82,13 +82,12 @@ public class ExtEmailSlicer extends	UnorderedStringSlicer<AbstractProject<?, ?>>
 				EmailType email = new EmailType();
 				email.setSendToDevelopers(true);
 				email.setSendToRecipientList(true);
+
+				// there is no way to get this text from the plugin itself
+				email.setBody("$DEFAULT_CONTENT");
+				email.setSubject("$DEFAULT_SUBJECT");
 				trigger.setEmail(email);
 				publisher.getConfiguredTriggers().add(trigger);
-				
-				// there is no way to get this text from the plugin itself
-				publisher.defaultContent = "$DEFAULT_CONTENT";
-				publisher.defaultSubject = "$DEFAULT_SUBJECT";
-				
 				publishers.add(publisher);
 				return true;
 			} else {
@@ -105,6 +104,14 @@ public class ExtEmailSlicer extends	UnorderedStringSlicer<AbstractProject<?, ?>>
 				return false;
 			}
 		}
+
+		public boolean removeTrigger(AbstractProject project) {
+			return false;
+		}
+
+		public boolean addTrigger(AbstractProject project, List<String> values) {
+			return false;
+		}
 	}
-	
+
 }
