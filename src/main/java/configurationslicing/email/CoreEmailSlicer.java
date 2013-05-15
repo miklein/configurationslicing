@@ -1,6 +1,7 @@
 package configurationslicing.email;
 
 import java.io.IOException;
+import java.util.List;
 
 import hudson.Extension;
 import hudson.maven.MavenModuleSet;
@@ -86,6 +87,12 @@ public class CoreEmailSlicer extends
 				return false;
 			}
 		}
+		public boolean removeTrigger(AbstractProject project) {
+			return false;
+		}
+		public boolean addTrigger(AbstractProject project, List<String> values) {
+			return false;
+		}
 	}
 	@SuppressWarnings("unchecked")
 	private static class MavenEmailProjectHandler implements ProjectHandler {
@@ -136,6 +143,12 @@ public class CoreEmailSlicer extends
 				return false;
 			}
 		}
+		public boolean removeTrigger(AbstractProject project) {
+			return false;
+		}
+		public boolean addTrigger(AbstractProject project, List<String> values) {
+			return false;
+		}
 	}
-	
+
 }
