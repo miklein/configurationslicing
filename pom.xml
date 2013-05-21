@@ -108,7 +108,7 @@
 			<optional>true</optional></dependency>
 	</dependencies>
 
-	<repositories>
+<!-- 	<repositories>
   		<repository>
         	<id>jenkinsReleases</id>
             <url>http://maven.jenkins-ci.org/content/repositories/releases/</url>
@@ -126,7 +126,7 @@
              <id>plugin-jenkinsReleases</id>
              <url>http://maven.jenkins-ci.org/content/repositories/releases</url>
 		</pluginRepository>
-	</pluginRepositories>
+	</pluginRepositories> -->
 
 	<scm>
 		<connection>scm:svn:https://svn.jenkins-ci.org/trunk/hudson/plugins/configurationslicing</connection>
