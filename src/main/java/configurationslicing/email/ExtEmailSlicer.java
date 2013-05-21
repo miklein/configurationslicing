@@ -84,10 +84,12 @@ public class ExtEmailSlicer extends	UnorderedStringSlicer<AbstractProject<?, ?>>
 				email.setSendToRecipientList(true);
 
 				// there is no way to get this text from the plugin itself
-				email.setBody("$DEFAULT_CONTENT");
-				email.setSubject("$DEFAULT_SUBJECT");
+				email.setBody("$PROJECT_DEFAULT_CONTENT");
+		        email.setSubject("$PROJECT_DEFAULT_SUBJECT");
 				trigger.setEmail(email);
 				publisher.getConfiguredTriggers().add(trigger);
+				publisher.defaultContent = "$DEFAULT_CONTENT";
+				publisher.defaultSubject = "$DEFAULT_SUBJECT";
 				publishers.add(publisher);
 				return true;
 			} else {

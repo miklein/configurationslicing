@@ -187,8 +187,8 @@ public abstract class AbstractTriggerSliceSpec extends AbstractEmailSliceSpec
             }
             EmailTrigger trigger = createTrigger();
             EmailType email = new EmailType();
-            email.setBody("$DEFAULT_CONTENT");
-            email.setSubject("$DEFAULT_SUBJECT");
+            email.setBody("$PROJECT_DEFAULT_CONTENT");
+            email.setSubject("$PROJECT_DEFAULT_SUBJECT");
             email.setSendToRecipientList(recipientList);
             email.setSendToDevelopers(developers);
             email.setSendToRequester(requester);
